@@ -28,6 +28,7 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
 
     private final EventDispatcher mEventDispatcher;
     private List<Object> mValueData;
+    private int delimeterColor = Color.WHITE;
 
     public ReactWheelCurvedPicker(ReactContext reactContext) {
         super(reactContext);
@@ -56,11 +57,9 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
         super.drawForeground(canvas);
 
         Paint paint = new Paint();
-        paint.setColor(Color.WHITE);
-        int colorFrom = 0x00FFFFFF;//Color.BLACK;
-        int colorTo = Color.WHITE;
-        LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
-        paint.setShader(linearGradientShader);
+        paint.setColor(delimeterColor);
+        int colorFrom = delimeterColor;//Color.BLACK;
+        int colorTo = delimeterColor;
         canvas.drawLine(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.top, paint);
         canvas.drawLine(rectCurItem.left, rectCurItem.bottom, rectCurItem.right, rectCurItem.bottom, paint);
     }
@@ -74,6 +73,10 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
 
     public void setValueData(List<Object> data) {
         mValueData = data;
+    }
+
+    public void setDelimeterColor(int color) {
+        delimeterColor = color;
     }
 
     public int getState() {

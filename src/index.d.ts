@@ -5,7 +5,7 @@ interface PickerProps {
   textColor?: string;
   textSize?: number;
   itemSpace?: number;
-  itemStyle?: ReactNative.TextProps;
+  itemStyle?: ReactNative.TextStyle;
   onValueChange: (val: any) => void;
   pickerData: any[];
   style: ReactNative.ViewProps['style'];
