@@ -80,6 +80,13 @@ public class ReactWheelCurvedPickerManager extends SimpleViewManager<ReactWheelC
         }
     }
 
+    @ReactProp(name="delimeterColor", customType = "Color")
+    public void setDelimeterColor(ReactWheelCurvedPicker picker, Integer color) {
+        if (picker != null) {
+            picker.setDelimeterColor(color);
+        }
+    }
+
     @ReactProp(name="textSize")
     public void setTextSize(ReactWheelCurvedPicker picker, int size) {
         if (picker != null) {
